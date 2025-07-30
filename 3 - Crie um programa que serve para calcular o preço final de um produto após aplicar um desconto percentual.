@@ -1,0 +1,26 @@
+def calcular_desconto(preco_original: float, percentual_desconto: float) -> float:
+    """
+    Calcula o valor final do produto com desconto aplicado.
+    
+    Parâmetros:
+    - preco_original (float): preço sem desconto
+    - percentual_desconto (float): valor percentual do desconto (ex: 20 para 20%)
+    
+    Retorna:
+    - float: preço final com desconto, arredondado para 2 casas decimais
+    """
+    valor_desconto = preco_original * (percentual_desconto / 100)
+    preco_final = preco_original - valor_desconto
+    return round(preco_final, 2)
+
+# Interação com o usuário
+try:
+    preco = float(input("Digite o preço original do produto (R$): "))
+    desconto = float(input("Digite o percentual de desconto (%): "))
+
+    preco_com_desconto = calcular_desconto(preco, desconto)
+    print(f"\nDesconto aplicado: {desconto}%")
+    print(f"Preço final com desconto: R$ {preco_com_desconto:.2f}")
+
+except ValueError:
+    print("Erro: por favor, digite valores numéricos válidos.")
