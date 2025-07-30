@@ -1,0 +1,21 @@
+def calcular_gorjeta(valor_conta: float, porcentagem_gorjeta: float) -> float:
+    """
+    Calcula o valor da gorjeta com base na conta e na porcentagem desejada.
+
+    Parâmetros:
+    - valor_conta (float): valor total da conta
+    - porcentagem_gorjeta (float): porcentagem da gorjeta (ex: 10 para 10%)
+
+    Retorna:
+    - float: valor da gorjeta
+    """
+    gorjeta = valor_conta * (porcentagem_gorjeta / 100)
+    return gorjeta
+
+# Exemplo de uso:
+conta = float(input("Digite o valor da conta: R$ "))
+porcentagem = float(input("Digite a porcentagem da gorjeta (%): "))
+
+valor_gorjeta = calcular_gorjeta(conta, porcentagem)
+
+print(f"A gorjeta de {porcentagem}% sobre R$ {conta:.2f} é: R$ {valor_gorjeta:.2f}")
